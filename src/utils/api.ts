@@ -1,10 +1,3 @@
-// export interface KeywordData {
-//   keyword: {
-//     textSnippets: [];
-//     keywordText: string;
-//   };
-// }
-
 export interface KeywordsData {
   keywords: {
     keyword: {
