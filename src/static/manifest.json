@@ -10,10 +10,17 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "React Extension",
+    "default_title": "Swiggy Support",
     "default_icon": "icon.png"
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "search",
+    "tabs",
+    "input",
+    "commands"
+  ],
   "options_page": "options.html",
   "background": {
     "service_worker": "background.js"
