@@ -1,3 +1,5 @@
+const stageUrl = 'https://swiggy-support-stage.herokuapp.com';
+
 export interface KeywordsData {
   keywords: {
     keyword: {
@@ -16,9 +18,7 @@ export interface KeywordData {
 }
 
 export async function fetchKeywordData(keyword: string): Promise<KeywordData> {
-  const res = await fetch(
-    `http://localhost:5000/api/keywords/keyword/${keyword}`
-  );
+  const res = await fetch(`${stageUrl}/api/keywords/keyword/${keyword}`);
 
   if (!res.ok) {
     throw new Error('Keyword not found');
@@ -29,7 +29,7 @@ export async function fetchKeywordData(keyword: string): Promise<KeywordData> {
 }
 
 export async function fetchKeywordsData(): Promise<KeywordsData> {
-  const res = await fetch(`http://localhost:5000/api/keywords/`);
+  const res = await fetch(`${stageUrl}/api/keywords/`);
 
   if (!res.ok) {
     throw new Error('Keywords not found');
@@ -40,7 +40,7 @@ export async function fetchKeywordsData(): Promise<KeywordsData> {
 }
 
 export async function postKeyword(data: string): Promise<any> {
-  const res = await fetch(`http://localhost:5000/api/keywords`, {
+  const res = await fetch(`${stageUrl}/api/keywords`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export async function postKeyword(data: string): Promise<any> {
 }
 
 export async function deleteKeyword(keywordId: string): Promise<any> {
-  const res = await fetch(`http://localhost:5000/api/keywords/${keywordId}`, {
+  const res = await fetch(`${stageUrl}/api/keywords/${keywordId}`, {
     method: 'DELETE',
   });
 
@@ -70,7 +70,7 @@ export async function deleteKeyword(keywordId: string): Promise<any> {
 }
 
 export async function updateKeyword(keywordId, data): Promise<any> {
-  const res = await fetch(`http://localhost:5000/api/keywords/${keywordId}`, {
+  const res = await fetch(`${stageUrl}/api/keywords/${keywordId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
